@@ -68,3 +68,51 @@ def test_day5_test2():
     outputs = [int(i) for i in f.getvalue().split()]
     diagnostic_codes = outputs[:-1]
     n.assert_equals(diagnostic_codes,[0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+def test_day5_test3():
+    """Is 1  equal to 8? (position_mode)"""
+    p = [3, 9, 8, 9, 10, 9, 4, 9, 99, -1, 8]
+    c = Computer(p)
+    f = io.StringIO()
+    with manage_input([1]):
+        with redirect_stdout(f):
+            c.run_until_stop()
+    outputs = [int(i) for i in f.getvalue().split()]
+    output_code = outputs[-1]
+    n.assert_equals(output_code, 0)
+
+def test_day5_test4():
+    """Is 9 less equal to 8? (position_mode)"""
+    p = [3,9,7,9,10,9,4,9,99,-1,8]
+    c = Computer(p)
+    f = io.StringIO()
+    with manage_input([9]):
+        with redirect_stdout(f):
+            c.run_until_stop()
+    outputs = [int(i) for i in f.getvalue().split()]
+    output_code = outputs[-1]
+    n.assert_equals(output_code, 0)
+
+def test_day5_test5():
+    """Is 8 equal to 8? (immediate_mode)"""
+    p = [3,3,1108,-1,8,3,4,3,99]
+    c = Computer(p)
+    f = io.StringIO()
+    with manage_input([8]):
+        with redirect_stdout(f):
+            c.run_until_stop()
+    outputs = [int(i) for i in f.getvalue().split()]
+    output_code = outputs[-1]
+    n.assert_equals(output_code, 1)
+
+def test_day5_test6():
+    """Is 3 less than 8? (immediate_mode)"""
+    p = [3,3,1107,-1,8,3,4,3,99]
+    c = Computer(p)
+    f = io.StringIO()
+    with manage_input([3]):
+        with redirect_stdout(f):
+            c.run_until_stop()
+    outputs = [int(i) for i in f.getvalue().split()]
+    output_code = outputs[-1]
+    n.assert_equals(output_code, 1)

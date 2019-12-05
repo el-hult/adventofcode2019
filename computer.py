@@ -5,6 +5,10 @@ ops_and_nargs = {
     2: ('multiply',3),
     3: ('input',1),
     4: ('output',1),
+    5: ('jump-if-true',2),
+    6: ('jump-if-false',2),
+    7: ('less than',3),
+    8: ('equals',3),
     99: ('stop',0),
 }
 """Opcodes and the number of arguments they take"""
@@ -40,10 +44,8 @@ class Computer():
         # Determine parameter modes
         modes =[int(i) for i in str(opcode)[-3::-1]]
         modes = modes+[0]*(nargs-len(modes) )
-        if op in ['add','multiply']:
-            modes[2] = 1
-        elif op in ['input']:
-            modes[0] = 1
+        if op in ['add','multiply','input','less than','equals']:
+            modes[nargs-1] = 1
 
         # Parse arguments
         args = []
@@ -67,6 +69,24 @@ class Computer():
             a = args[0]
             in_val = int(input("Input: "))
             self.state[a] = in_val
+            self.instr_pntr += (nargs+1)
+        elif op == 'jump-if-true':
+            if args[0] != 0:
+                self.instr_pntr = args[1]
+            else:
+                self.instr_pntr += (nargs+1)
+        elif op == 'jump-if-false':
+            if args[0] == 0:
+                self.instr_pntr = args[1]
+            else:
+                self.instr_pntr += (nargs+1)
+        elif op == 'less than':
+            a,b,c = args
+            self.state[c] = int(a<b)
+            self.instr_pntr += (nargs+1)
+        elif op == 'equals':
+            a,b,c = args
+            self.state[c] = int(a == b)
             self.instr_pntr += (nargs+1)
         elif op == 'output':
             a = args[0]
