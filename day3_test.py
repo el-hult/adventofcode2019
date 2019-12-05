@@ -27,8 +27,6 @@ U7,R6,D4,L4"""
     output = 6
     grid, coords = process_inputs(parse_problem_input(input))
     ans = get_min_dist_to_crossing(coords)
-    with open("foooo_simple.txt", "w") as text_file:
-        text_file.write(grid.pretty_print())
     assert_equals(ans, output)
 
 
