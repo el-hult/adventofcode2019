@@ -17,7 +17,7 @@ Program = List[int]
 State = List[int]
 
 
-def get_test_program() -> Program:
+def get_day5_program() -> Program:
     """Retrieves the Thermal Environment Supervision Terminal program"""
     with open("inputs/day5.txt") as f:
         s = f.readline()

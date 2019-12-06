@@ -3,7 +3,7 @@ from contextlib import redirect_stdout
 
 import nose.tools as n
 
-from computer import get_test_program
+from computer import get_day5_program
 from day2_lib import Computer
 from util import manage_input
 
@@ -53,13 +53,13 @@ def test_day2_test5():
 
 def test_day5_test1():
     """Make sure the TEST program loads"""
-    p = get_test_program()
+    p = get_day5_program()
     assert type(p) is list
     assert all(type(i) == int for i in p)
 
 
 def test_day5_test2():
-    p = get_test_program()
+    p = get_day5_program()
     c = Computer(p)
     f = io.StringIO()
     with manage_input([1]):
