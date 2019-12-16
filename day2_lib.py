@@ -1,5 +1,3 @@
-from typing import Literal, List, Callable
-
 from computer import Computer, Program
 
 
@@ -9,4 +7,4 @@ def compute_computer_output(program: Program, noun: int, verb: int) -> int:
     initial_state[2] = verb
     cmp = Computer(initial_state)
     cmp.run_until_stop()
-    return cmp.state[0]
+    return cmp._state[0]

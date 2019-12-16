@@ -9,6 +9,12 @@ def queue_to_list(queue: Queue):
         out.append(queue.get())
     return out
 
+def queue_from_iterable(iter):
+    q = Queue()
+    for i in iter:
+        q.put(i)
+    return q
+
 
 def grouper(iterable, n, fillvalue=None):
     """Collect data into fixed-length chunks or blocks"
