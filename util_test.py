@@ -1,7 +1,14 @@
-from util import manage_input
+from queue import Queue
 
-def test_some():
-    with manage_input([123,"hej","oops"]):
-        assert input("boo") == 123
-        assert input() == "hej"
-        assert input("") == "oops"
+import nose.tools
+
+from util import queue_to_list
+
+
+def test_1():
+    q1 = Queue()
+    q1.put(1)
+    q1.put(3)
+    q1.put("hej")
+    l = queue_to_list(q1)
+    nose.tools.assert_equals([1,3,"hej"],l)

@@ -1,13 +1,9 @@
-import builtins
-from contextlib import contextmanager
+import logging
+from queue import Queue
+LOG = logging.getLogger(__name__)
 
-
-@contextmanager
-def manage_input(list_of_strings_to_give_as_input):
-    t = builtins.input
-    g = (x for x in list_of_strings_to_give_as_input)
-    def my_input(*args):
-        return next(g)
-    builtins.input = my_input
-    yield
-    builtins.input = t
+def queue_to_list(queue: Queue):
+    out = []
+    while not queue.empty():
+        out.append(queue.get())
+    return out
