@@ -1,12 +1,12 @@
 from day2_lib import compute_computer_output
+from util import read_file
 
 INPUT_PATH = 'inputs/day2.txt'
 
 if __name__ == "__main__":
-    with open(INPUT_PATH) as f:
-        line = f.readline().strip()
-        state = line.split(",")
-        program = list(map(lambda x: int(x), state))
+    line = read_file(INPUT_PATH)
+    state = line.split(",")
+    program = list(map(lambda x: int(x), state))
 
     ans_a = compute_computer_output(program, 12, 2)
     print(f"The value in position 0 after completion is {ans_a}")  # 3850704 is just right
