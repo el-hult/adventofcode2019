@@ -1,10 +1,10 @@
 from queue import Queue
 
-from computer import get_day5_program, Computer
+from computer import Computer, thermal_environment_supervision_terminal
 from util import queue_to_list
 
 if __name__ == "__main__":
-    p = get_day5_program()
+    p = thermal_environment_supervision_terminal()
     q1 = Queue()
     q2 = Queue()
     q1.put(1)
