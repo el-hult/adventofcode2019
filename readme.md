@@ -9,12 +9,16 @@ that test setups has come along.
 ## Running tests
 simply run 
 ```
-> nosetests
+$ nosetests --with-doctest
 ```
-
 in your terminal, in the root location. Or run in PyCharm
 All test scripts are functions named `test` in some way, so the test runner will find them.
+There are some doctests as well, but the flag to nose will make sure it finds them all!
  
 
 ## Running solutions
-The files `day{x}_runner.py` gives the right answers. Run them.  With `python day{x}_runner.py` quite simply.
+The files `day{x}_runner.py` gives the right answers. Run them.  With 
+```
+$ python day{x}_runner.py
+```
+quite simply.

@@ -15,6 +15,11 @@ def queue_from_iterable(iter):
         q.put(i)
     return q
 
+def read_file(fname):
+    with open(fname, 'r') as my_file:
+        data = my_file.read()
+    return data
+
 
 def grouper(iterable, n, fillvalue=None):
     """Collect data into fixed-length chunks or blocks"
