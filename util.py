@@ -1,7 +1,9 @@
 import logging
 from itertools import zip_longest, chain
 from queue import Queue
+
 LOG = logging.getLogger(__name__)
+
 
 def queue_to_list(queue: Queue):
     out = []
@@ -9,11 +11,13 @@ def queue_to_list(queue: Queue):
         out.append(queue.get())
     return out
 
+
 def queue_from_iterable(iter):
     q = Queue()
     for i in iter:
         q.put(i)
     return q
+
 
 def read_file(fname):
     with open(fname, 'r') as my_file:

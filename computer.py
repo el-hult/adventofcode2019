@@ -3,7 +3,7 @@ from enum import IntEnum
 from queue import Queue
 from typing import List, Union
 
-from util import queue_from_iterable, queue_to_list
+from util import queue_from_iterable, queue_to_list, read_file
 
 
 class ParameterMode(IntEnum):
@@ -36,8 +36,7 @@ BOOST_TESTMODE = 1
 
 
 def get_program(fname: str) -> Program:
-    with open(fname) as f:
-        s = f.readline().strip()
+    s=read_file(fname)
     p = [int(i) for i in s.split(",")]
     return p
 
