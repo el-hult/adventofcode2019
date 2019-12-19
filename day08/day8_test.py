@@ -1,7 +1,6 @@
 from typing import Literal, List
 
 import nose
-
 from day8_lib import compute_checksum, render_image
 
 

@@ -1,4 +1,5 @@
 from day4_lib import moar_numbers
+
 from util import read_file
 
 INPUT_PATH = 'inputs/day4.txt'

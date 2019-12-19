@@ -2,7 +2,7 @@ from enum import IntEnum
 from operator import itemgetter
 from threading import Thread
 
-from computer import Computer
+from util import Computer
 
 
 class RotDir(IntEnum):

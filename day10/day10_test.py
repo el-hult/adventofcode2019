@@ -2,7 +2,6 @@ from itertools import combinations
 from operator import itemgetter
 
 import nose
-
 from day10_lib import find_best_location, parse_map, Graph, has_line_of_sight, n_between, angle_to, \
     find_nth_to_be_lasered
 

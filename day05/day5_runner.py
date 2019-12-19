@@ -1,7 +1,6 @@
 from queue import Queue
 
-from computer import Computer, thermal_environment_supervision_terminal
-from util import queue_to_list
+from util import queue_to_list, thermal_environment_supervision_terminal, Computer
 
 if __name__ == "__main__":
     p = thermal_environment_supervision_terminal()

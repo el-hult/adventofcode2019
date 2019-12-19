@@ -1,8 +1,9 @@
 from collections import defaultdict
 from queue import Queue
 
-from computer import get_program, Computer
 from day11_lib import PanelColor, EmergencyHullPaintingRobot, chargrid_to_str, plot_panels_and_robot
+
+from util import get_program, Computer
 
 p = get_program('inputs/day11.txt')
 

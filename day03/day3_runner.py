@@ -1,4 +1,5 @@
 from day3_lib import *
+
 from util import read_file
 
 INPUT_PATH = 'inputs/day3.txt'

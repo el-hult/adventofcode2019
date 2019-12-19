@@ -2,10 +2,9 @@ from collections import defaultdict
 from queue import Queue
 
 import nose
-
-from computer import get_program, Computer
 from day11_lib import PanelColor, EmergencyHullPaintingRobot, RotDir
-from util import queue_from_iterable
+
+from util import queue_from_iterable, get_program, Computer
 
 
 def test1():

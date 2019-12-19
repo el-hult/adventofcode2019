@@ -1,8 +1,7 @@
 import itertools
 
-from nose.tools import assert_equals
-
 from day7_lib import calc_amp, calc_amp_with_feedback
+from nose.tools import assert_equals
 
 test_program_1 = [int(i) for i in "3,15,3,16,1002,16,10,16,1,16,15,15,4,15,99,0,0".split(",")]
 test_program_2 = [int(i) for i in "3,23,3,24,1002,24,10,24,1002,23,-1,23,101,5,23,23,1,24,23,23,4,23,99,0,0".split(",")]

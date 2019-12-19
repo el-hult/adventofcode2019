@@ -1,4 +1,5 @@
 from day2_lib import compute_computer_output
+
 from util import read_file
 
 INPUT_PATH = 'inputs/day2.txt'

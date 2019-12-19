@@ -1,4 +1,5 @@
 from day12_lib import *
+
 from util import *
 
 f = read_file('inputs/day12.txt')

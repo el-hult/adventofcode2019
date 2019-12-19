@@ -1,7 +1,8 @@
 import itertools
 
-from computer import get_program
 from day7_lib import calc_amp, calc_amp_with_feedback
+
+from util import get_program
 
 if __name__ == "__main__":
     p = get_program("inputs/day7.txt")

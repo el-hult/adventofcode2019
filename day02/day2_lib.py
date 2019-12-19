@@ -1,4 +1,4 @@
-from computer import Computer, Program
+from util import Program, Computer
 
 
 def compute_computer_output(program: Program, noun: int, verb: int) -> int:

@@ -3,8 +3,7 @@ import logging
 from queue import Queue
 from typing import Iterable, Sequence
 
-from computer import Program, Computer
-from util import queue_to_list
+from util import queue_to_list, Program, Computer
 
 LOG = logging.getLogger(__name__)
 

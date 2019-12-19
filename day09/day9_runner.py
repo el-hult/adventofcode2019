@@ -1,4 +1,4 @@
-from computer import basic_operation_of_system_test, run_siso_program
+from util import basic_operation_of_system_test, run_siso_program
 
 prog = basic_operation_of_system_test()
 output = run_siso_program(prog, 1)

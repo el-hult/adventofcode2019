@@ -1,6 +1,5 @@
-from nose.tools import assert_equals
-
 from day6_lib import make_tree_from_adj_list, calculate_hops, all_descendants_BFS
+from nose.tools import assert_equals
 
 input_ = """COM)B
 B)C

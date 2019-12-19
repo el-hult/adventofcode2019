@@ -1,4 +1,5 @@
 from day10_lib import find_best_location, find_nth_to_be_lasered, parse_map
+
 from util import read_file
 
 innn = read_file('inputs/day10.txt')
