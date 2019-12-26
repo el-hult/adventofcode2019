@@ -1,7 +1,6 @@
 import itertools
 
-from day7_lib import calc_amp, calc_amp_with_feedback
-
+from day07.day7_lib import calc_amp, calc_amp_with_feedback
 from util import get_program
 
 if __name__ == "__main__":
@@ -11,7 +10,7 @@ if __name__ == "__main__":
     a_max, max_config = max(
         ((calc_amp(p, phase_config), phase_config) for phase_config in all_possible_phase_settings),
         key=lambda s: s[0])
-    print(f"The maximal amplitude that 5 amps can give is: {a_max}")
+    print(f"The maximal amplitude that 5 amps can give is: {a_max}") # 77500
 
 
 
@@ -21,4 +20,4 @@ if __name__ == "__main__":
         itertools.permutations(range(5, 10))
     )
     a_max, max_config = max(amplification_and_settings, key=lambda s: s[0])
-    print(f"With feedback the max becomes {a_max}")
+    print(f"With feedback the max becomes {a_max}") # 22476942

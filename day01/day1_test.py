@@ -1,4 +1,4 @@
-from day1_lib import calculate_fuel_consumption, calculate_fuel_consumption_plus_fuel_for_fuel
+from day01.day1_lib import calculate_fuel_consumption, calculate_fuel_consumption_plus_fuel_for_fuel
 
 
 def test_one():

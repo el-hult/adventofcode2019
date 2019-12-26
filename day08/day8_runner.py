@@ -1,4 +1,4 @@
-from day8_lib import compute_checksum, render_image, BLACK
+from day08.day8_lib import compute_checksum, render_image, BLACK
 
 IMAGE_WIDTH = 25
 IMAGE_TALL = 6

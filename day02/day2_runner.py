@@ -1,11 +1,10 @@
-from day2_lib import compute_computer_output
+from day02.day2_lib import compute_computer_output
+from util import read_input_file
 
-from util import read_file
-
-INPUT_PATH = 'inputs/day2.txt'
+INPUT_PATH = '../inputs/day2.txt'
 
 if __name__ == "__main__":
-    line = read_file(INPUT_PATH)
+    line = read_input_file(INPUT_PATH)
     state = line.split(",")
     program = list(map(lambda x: int(x), state))
 

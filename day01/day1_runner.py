@@ -1,6 +1,6 @@
-INPUT_PATH = 'inputs/day1.txt'
+from day01.day1_lib import calculate_fuel_consumption, calculate_fuel_consumption_plus_fuel_for_fuel
 
-from day1_lib import calculate_fuel_consumption, calculate_fuel_consumption_plus_fuel_for_fuel
+INPUT_PATH = '../inputs/day1.txt'
 
 if __name__ == "__main__":
 	total_fuel_a = 0

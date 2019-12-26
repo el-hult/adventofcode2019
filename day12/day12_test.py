@@ -1,6 +1,5 @@
-import nose
 
-from day12_lib import parse_particles, apply_gravity, travel_with_velocity, ps_to_str, \
+from day12.day12_lib import parse_particles, apply_gravity, travel_with_velocity, ps_to_str, \
     naive_recurrence_check, better_recurrence_check
 
 test_input = """<x=-1, y=0, z=2>
@@ -21,11 +20,11 @@ pos=<x=  2, y=  2, z=  0>, vel=<x= -1, y= -3, z=  1>"""
 
 def test():
     ps = parse_particles(test_input)
-    nose.tools.assert_equal(ps_to_str(ps), after_0)
+    ps_to_str(ps) == after_0
     apply_gravity(ps)
     travel_with_velocity(ps)
     # print(ps_to_str(ps))
-    nose.tools.assert_equal(ps_to_str(ps), after_1)
+    ps_to_str(ps) == after_1
 
 
 def test2():

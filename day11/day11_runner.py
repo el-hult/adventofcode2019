@@ -1,11 +1,10 @@
 from collections import defaultdict
 from queue import Queue
 
-from day11_lib import PanelColor, EmergencyHullPaintingRobot, chargrid_to_str, plot_panels_and_robot
-
+from day11.day11_lib import PanelColor, EmergencyHullPaintingRobot, chargrid_to_str, plot_panels_and_robot
 from util import get_program, Computer
 
-p = get_program('inputs/day11.txt')
+p = get_program('day11.txt')
 
 grid = defaultdict(lambda: PanelColor.Black)
 brain = Computer(p, Queue(), Queue())

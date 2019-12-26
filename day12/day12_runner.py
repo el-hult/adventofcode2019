@@ -1,8 +1,8 @@
-from day12_lib import *
+from day12.day12_lib import *
 
 from util import *
 
-f = read_file('inputs/day12.txt')
+f = read_input_file('day12.txt')
 
 particles = parse_particles(f)
 print(particles)

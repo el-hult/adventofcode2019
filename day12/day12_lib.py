@@ -4,6 +4,8 @@ import math
 from dataclasses import dataclass
 from typing import List
 
+from util import my_sign
+
 
 @dataclass
 class ParticleState:
@@ -47,15 +49,6 @@ def get_energy(ps: List[ParticleState]):
         particle_energy = potential_energy* kinetic_energy
         tot_energy += particle_energy
     return  tot_energy
-
-
-def my_sign(i: int) -> int:
-    if i > 0:
-        return 1
-    elif i < 0:
-        return -1
-    else:
-        return 0
 
 
 def parse_particles(f:str):

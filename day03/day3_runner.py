@@ -1,11 +1,11 @@
-from day3_lib import *
+from day03.day3_lib import *
 
-from util import read_file
+from util import read_input_file
 
-INPUT_PATH = 'inputs/day3.txt'
+INPUT_PATH = '../inputs/day3.txt'
 
 if __name__ == "__main__":
-    file = read_file(INPUT_PATH)
+    file = read_input_file(INPUT_PATH)
 
     lines = parse_problem_input(file)
     _,coords = process_inputs(lines)

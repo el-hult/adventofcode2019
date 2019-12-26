@@ -1,9 +1,7 @@
 from collections import defaultdict
 from queue import Queue
 
-import nose
-from day11_lib import PanelColor, EmergencyHullPaintingRobot, RotDir
-
+from day11.day11_lib import PanelColor, EmergencyHullPaintingRobot, RotDir
 from util import queue_from_iterable, get_program, Computer
 
 
@@ -12,7 +10,7 @@ def test1():
         expected_camera_readings = queue_from_iterable([0, 0, 0, 0, 1, 0, 0])
         instruction_list = queue_from_iterable([1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0])
         while not expected_camera_readings.empty():
-            nose.tools.assert_equals(robot.use_camera(), expected_camera_readings.get())
+            assert robot.use_camera() == expected_camera_readings.get()
 
             color_instr = PanelColor(instruction_list.get(timeout=1))
             robot.paint(color_instr)
@@ -21,7 +19,7 @@ def test1():
             robot.move_forward()
 
     grid = defaultdict(lambda: PanelColor.Black)
-    p = get_program('inputs/day11.txt')
+    p = get_program('day11.txt')
 
     test_brain = Computer(p, Queue(), Queue())
     test_robot = EmergencyHullPaintingRobot(test_brain, grid)

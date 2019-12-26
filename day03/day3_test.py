@@ -1,5 +1,4 @@
-from day3_lib import *
-from nose.tools import assert_equals
+from day03.day3_lib import *
 
 
 def test_case0():
@@ -9,15 +8,15 @@ U62,R66,U55,R34,D71,R55,D58,R83"""
     output = 159
     grid, coords = process_inputs(parse_problem_input(input))
     ans = get_min_dist_to_crossing(coords)
-    assert_equals(ans, output)
+    assert ans ==output
 
 
 def test_moar():
-    assert_equals(get_min_dist_to_crossing([(Crossing(10,10,0,0))]), 20)
+    assert get_min_dist_to_crossing([(Crossing(10,10,0,0))])== 20
 
 
 def test_moar_neg():
-    assert_equals(get_min_dist_to_crossing([Crossing(-10,10,0,0)]),20)
+    assert get_min_dist_to_crossing([Crossing(-10,10,0,0)])==20
 
 
 def test_case00():
@@ -27,7 +26,7 @@ U7,R6,D4,L4"""
     output = 6
     grid, coords = process_inputs(parse_problem_input(input))
     ans = get_min_dist_to_crossing(coords)
-    assert_equals(ans, output)
+    assert ans == output
 
 
 def test_printer():
@@ -45,7 +44,7 @@ U7,R6,D4,L4"""
 .o11111111.
 ..........."""
     grid, _ = process_inputs(parse_problem_input(input))
-    assert_equals(grid.pretty_print(), output)
+    assert grid.pretty_print() == output
 
 
 def test_case1():
@@ -53,26 +52,26 @@ def test_case1():
     output = 135
     _, coords = process_inputs(parse_problem_input(input))
     ans = get_min_dist_to_crossing(coords)
-    assert_equals(ans, output)
+    assert ans  ==output
 
 
 def test_parse_1():
-    assert_equals(parse_single_input("U92"), (CardinalDirection.U, 92))
+    assert parse_single_input("U92") == (CardinalDirection.U, 92)
 
 
 def test_parse_2():
-    assert_equals(parse_line("R7,D30,L83,U83"), [
+    assert parse_line("R7,D30,L83,U83") == [
         (CardinalDirection.R, 7),
         (CardinalDirection.D, 30),
         (CardinalDirection.L, 83),
         (CardinalDirection.U, 83),
-    ])
+    ]
 
 
 def test_parse_d():
-    assert_equals(parse_problem_input("R7,D30\nL83,U83"), ([
+    assert parse_problem_input("R7,D30\nL83,U83") == ([
                                                                (CardinalDirection.R, 7),
                                                                (CardinalDirection.D, 30)], [
                                                                (CardinalDirection.L, 83),
                                                                (CardinalDirection.U, 83),
-                                                           ]))
+                                                           ])

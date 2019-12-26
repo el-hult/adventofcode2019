@@ -2,7 +2,7 @@ from enum import IntEnum
 from operator import itemgetter
 from threading import Thread
 
-from util import Computer
+from util import Computer, chargrid_to_str, ComputerSignals
 
 
 class RotDir(IntEnum):
@@ -69,6 +69,8 @@ class EmergencyHullPaintingRobot:
         brain_thread = Thread(target=self.brain.run_until_stop)
         brain_thread.start()
         while brain_thread.is_alive():
+            i = self.brain.output_queue.get()
+            assert i == ComputerSignals.input_needed
             self.brain.input_queue.put(self.use_camera())
             color_instr = PanelColor(self.brain.output_queue.get(timeout=1))
             self.paint(color_instr)
@@ -108,5 +110,3 @@ def plot_panels_and_robot(robot):
     return output_grid
 
 
-def chargrid_to_str(list_of_list_of_char):
-    return "\n".join(map(lambda l: "".join(l), list_of_list_of_char))

@@ -3,7 +3,7 @@ import logging
 from queue import Queue
 from typing import Iterable, Sequence
 
-from util import queue_to_list, Program, Computer
+from util import queue_to_list, Program, Computer, ComputerSignals
 
 LOG = logging.getLogger(__name__)
 
@@ -17,7 +17,7 @@ def calc_amp(amp_program: Program, phase_config: Iterable[int]):
         outq = Queue()
         amplifier = Computer(amp_program,input_queue=inq,output_queue=outq)
         amplifier.run_until_stop()
-        amp_output = queue_to_list(outq)
+        amp_output = [i for i in queue_to_list(outq) if not isinstance(i,ComputerSignals)]
         assert len(amp_output) == 1
         input_ = amp_output[-1]
     return amp_output[-1]
@@ -50,8 +50,6 @@ def calc_amp_with_feedback(amp_program: Program, phase_config: Sequence[int]):
         executor.submit(run_computer_on_queues, amp_program, c_to_d_queue, d_to_e_queue)
         executor.submit(run_computer_on_queues, amp_program, d_to_e_queue, input_and_feedback_queue)
 
-    out = None
-    while not input_and_feedback_queue.empty():
-        out = input_and_feedback_queue.get()
+    outs = queue_to_list(input_and_feedback_queue)
 
-    return out
+    return outs[-2]
